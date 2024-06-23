@@ -7,6 +7,7 @@ const Jhon = () => {
     return (
         <>
             <div className="h-screen  bg-cover bg-center bg-no-repeat flex flex-col gap-2 " style={{ backgroundImage: `url(backgrounds/agentsBg.svg)` }}>
+            
                 <div className='flex gap-[30%]'>
 
                     <div>

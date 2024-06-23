@@ -7,7 +7,6 @@ const AgentsPage = () => {
     return (
         <>
                 <Jhon/>
-               
         </>
     )
 }
