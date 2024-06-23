@@ -22,7 +22,7 @@ const Jhon = () => {
                     </div>
 
                     <Link href={"/Playground"} className='mt-[80px]'>
-                        {/* <AgentsBox imgUrl={"JohnAgent.svg"} name={"Jhon."} jobType={"Data Analyst"} /> */}
+                      
                         <AgentsBox imgUrl={"Jhon.png"} name={"Jhon."} jobType={"Data Analyst"} />
                     </Link>
 
@@ -49,3 +49,9 @@ const Jhon = () => {
 }
 
 export default Jhon
+
+
+export const metadata = {
+    title: "Humaiod AI - Agents",
+    description: "Select an agent Suitable for you",
+  };

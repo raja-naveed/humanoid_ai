@@ -56,3 +56,8 @@ const DataSetup = () => {
 }
 
 export default DataSetup
+
+export const metadata = {
+  title: "Humaiod AI - Data Setup",
+  description: "Start training your AI agent with your business reports. Upload your business reports and train your AI agent to understand your business logic.",
+};

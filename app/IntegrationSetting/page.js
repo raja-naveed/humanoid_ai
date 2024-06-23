@@ -52,3 +52,9 @@ const IntegrationSetting = () => {
 }
 
 export default IntegrationSetting
+
+
+export const metadata = {
+  title: "Humaiod AI - Intergration Setting",
+  description: "Integration Setting page for Humaiod AI",
+};

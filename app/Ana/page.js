@@ -3,7 +3,7 @@ import AgentsBox from '../components/AgentsBox'
 import AgentsBoxSmall from '../components/AgentsBoxSmall'
 import Link from 'next/link'
 
-const Jhon = () => {
+const Ana = () => {
 
     return (
         <>
@@ -22,7 +22,7 @@ const Jhon = () => {
                     <Link href={"/Jhon"} >
                     <div className='ml-[40px]'>
 
-                    {/* <AgentsBoxSmall imgUrl={"JohnAgent.svg"} name={"Jhon."} jobType={"Data Analyst"}/> */}
+                  
                     <AgentsBoxSmall imgUrl={"Jhon.png"} name={"Jhon."} jobType={"Data Analyst"}/>
                     </div>
                     </Link>
@@ -31,7 +31,7 @@ const Jhon = () => {
                     </div>
 
                     <Link href={"/Playground"} className='mt-[80px]'>
-                        {/* <AgentsBox imgUrl={"AnaAgent.svg"} name={"Ana."} jobType={"HR Manager"} /> */}
+                        
                         <AgentsBox imgUrl={"Ana.png"} name={"Ana."} jobType={"HR Manager"} />
                     </Link>
 
@@ -56,4 +56,10 @@ const Jhon = () => {
 
 }
 
-export default Jhon
+export default Ana
+
+
+export const metadata = {
+    title: "Humaiod AI - Agents",
+    description: "Select an agent Suitable for you",
+  };

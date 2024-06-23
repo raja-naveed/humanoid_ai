@@ -12,14 +12,7 @@ const Login = () => {
 
 
 <img src="banner.svg" alt="" width={600} className='absolute top-0' />
-{/* <div class="banner px-6 py-10 bg-transparent text-white w-full absolute top-0 left-0">
-    <div class="logo flex gap-5 items-center my-6">
-      <img width={30} src="logo.png" alt="Humanoid AI Logo"/>
-      <span class="title">HUMANOID AI</span>
-    </div>
-    <div class="subtitle font-black text-3xl mb-4 text-gradient " >A 24 HRS ACTIVE ONLINE AGENT</div>
-    <div class="tagline">Select, Train, Deploy</div>
-  </div> */}
+
 
 
     <div className="bg-[#00000046] p-8 rounded-[33px] shadow-lg w-[30vw] max-w-lg pb-20 fixed top-[18%] right-[10%]">
@@ -60,3 +53,9 @@ const Login = () => {
 }
 
 export default Login
+
+
+export const metadata = {
+  title: "Humaiod AI - Login",
+  description: "A 24 HRS ACTIVE ONLINE AGENT",
+};
