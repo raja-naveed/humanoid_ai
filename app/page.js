@@ -1,11 +1,15 @@
 import React from 'react';
-import Login from './components/Login';
+import AgentsPage from './components/AgentsPage';
+import AgentsBox from './components/AgentsBox'; 
 
 export default function Home() {
   return (
     <>
    
-    <Login />
+    {/* <Login /> */}
+    <AgentsPage />
+
+      {/* <AgentsBox /> */}
     </>
    
   );
