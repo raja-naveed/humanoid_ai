@@ -1,25 +1,24 @@
 import React from 'react'
-// import Image from 'next/image'
-// import Background from "./backgrounds/loginPagebg.jpg"
+import Image from 'next/image'
+
 
 
 const Login = () => {
   return (
    <>
 
-{/* <div className=""> */}
-<div className="relative h-screen  bg-cover bg-center bg-no-repeat flex" style={{ backgroundImage: `url(backgrounds/loginbg.svg)` }}>  
+<div className="relative h-screen  bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/loginbg.svg)` }}>  
 
 
-<img src="banner.svg" alt="" width={600} className='absolute top-0' />
+<img src="banner.svg" alt="" className='md:absolute md:top-0 md:w-1/3' />
 
 
 
-    <div className="bg-[#00000046] p-8 rounded-[33px] shadow-lg w-[30vw] max-w-lg pb-20 fixed top-[18%] right-[10%]">
-        <h2 className="text-5xl text-center text-white mb-8 mt-16 ">Login</h2>
-        <p className="text-center text-gray-50 mb-16 italic">Humanoid by Lyzer</p>
+    <div className="bg-[#00000046] md:p-8 py-4 px-8 rounded-[33px] shadow-lg w-[30vw] md:max-w-lg w-full md:pb-20 pb-10 md:fixed md:top-[18%] md:right-[10%]">
+        <h2 className="text-5xl text-center text-white mb-5 mt-8 md:mb-8 md:mt-16 ">Login</h2>
+        <p className="text-center text-gray-50 mb-8 md:mb-16 italic">Humanoid by Lyzer</p>
         <form action=''>
-            <div className="mb-6">
+            <div className="md:mb-6 mb-4">
                 <label for="email" className="block text-gray-50 text-sm italic mb-2">Enter your email</label>
                 <input type="email" id="email" name="email" placeholder="johndoe@email.com" className="shadow appearance-none bg-transparent border rounded-lg w-full py-4 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" required />
             </div>
