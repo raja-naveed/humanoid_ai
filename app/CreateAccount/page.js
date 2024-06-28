@@ -34,7 +34,7 @@ export default function CreateAccount () {
     }
 
   return (
-    <div className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/loginbg.svg)` }}>
+    <div className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/Login.png)` }}>
       <img src="banner.svg" alt="" className="md:absolute md:top-0 md:w-1/3" />
       <div className="bg-[#00000046] md:p-8 py-4 px-8 rounded-[33px] shadow-lg w-[30vw] md:max-w-lg w-full md:pb-20 pb-10 md:fixed md:top-[18%] md:right-[10%]">
         <h2 className="text-5xl text-center text-white mb-5 mt-8 md:mb-8 md:mt-16">SignUp</h2>
@@ -49,6 +49,7 @@ export default function CreateAccount () {
               id="name"
               name="name"
               value={name}
+              placeholder='example: Jhon'
               onChange={(e) => setName(e.target.value)}
               className="shadow appearance-none bg-transparent border rounded-lg w-full py-4 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
@@ -63,7 +64,7 @@ export default function CreateAccount () {
               id="email"
               name="email"
               value={email}
-              placeholder="johndoe@email.com"
+              placeholder="jhondoe@email.com"
               onChange={(e) => setEmail(e.target.value)}
               className="shadow appearance-none bg-transparent border rounded-lg w-full py-4 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required

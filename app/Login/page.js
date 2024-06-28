@@ -28,7 +28,7 @@ const login = () => {
   };
 
   return (
-    <div className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/loginbg.svg)` }}>
+    <div className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/Login.png)` }}>
       <img src="banner.svg" alt="" className="md:absolute md:top-0 md:w-1/3" />
       <div className="bg-[#00000046] md:p-8 py-4 px-8 rounded-[33px] shadow-lg w-[30vw] md:max-w-lg w-full md:pb-20 pb-10 md:fixed md:top-[18%] md:right-[10%]">
         <h2 className="text-5xl text-center text-white mb-5 mt-8 md:mb-8 md:mt-16">Login</h2>
