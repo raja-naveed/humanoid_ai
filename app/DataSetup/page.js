@@ -11,7 +11,7 @@ const DataSetup = () => {
         <NavBar />
 
         <div className="flex flex-col lg:flex-row mt-10">
-          <div className="first mx-4 md:mx-8 lg:mx-[65px] flex flex-col  lg:gap-20 w-full lg:w-1/3 mb-8  lg:mb-0">
+          <div className="first mx-4 md:mx-8 lg:mx-[65px] flex flex-col  lg:gap-20 w-full lg:w-1/3 mb-8  lg:mb-0 ">
             <AgentsBoxSmall imgUrl={"Jhon.png"} name={"Jhon."} jobType={"Data Analyst"} />
             <div className='text-white flex flex-col gap-3 lg:gap-7 italic my-5'>
               <Link href={'/Playground'} className='text-[#9e9c9cac] text-[15px] md:text-[26px]'>Playground</Link>
