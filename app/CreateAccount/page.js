@@ -1,42 +1,62 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
-import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+"use client"
+import React from 'react'
+import { useState } from 'react'
+import Link from 'next/link'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
-const login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter();
-  const { status } = useSession();
+export default function CreateAccount () {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const router = useRouter()
 
-  if (status === "authenticated") {
-    router.push("/");
-  }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    signIn("credentials", { email, password, redirect: false }).then((response) => {
-      if (response.error) {
-        setError("Invalid email/password");
-      } else {
-        router.push("/");
-      }
-    });
-  };
+        try {
+            const response = await axios.post('/api/users', {
+                name,
+                email,
+                password
+            })
+            router.push('/login')
+        
+
+        }catch(error){
+        if(error.response && error.response.status===400){
+            setError("Email already exists")
+        }else{
+            setError("Something went wrong")
+        }
+    }
+    }
 
   return (
     <div className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col md:flex-row" style={{ backgroundImage: `url(backgrounds/loginbg.svg)` }}>
       <img src="banner.svg" alt="" className="md:absolute md:top-0 md:w-1/3" />
       <div className="bg-[#00000046] md:p-8 py-4 px-8 rounded-[33px] shadow-lg w-[30vw] md:max-w-lg w-full md:pb-20 pb-10 md:fixed md:top-[18%] md:right-[10%]">
-        <h2 className="text-5xl text-center text-white mb-5 mt-8 md:mb-8 md:mt-16">Login</h2>
+        <h2 className="text-5xl text-center text-white mb-5 mt-8 md:mb-8 md:mt-16">SignUp</h2>
         <p className="text-center text-gray-50 mb-8 md:mb-16 italic">Humanoid by Lyzer</p>
         <form onSubmit={handleSubmit}>
           <div className="md:mb-6 mb-4">
+            <label htmlFor="name" className="block text-gray-50 text-sm italic mb-2">
+              Name
+            </label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="shadow appearance-none bg-transparent border rounded-lg w-full py-4 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          <div className="md:mb-6 mb-4">
             <label htmlFor="email" className="block text-gray-50 text-sm italic mb-2">
-              Enter your email
+              Email
             </label>
             <input
               type="email"
@@ -51,7 +71,7 @@ const login = () => {
           </div>
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-50 text-sm italic mb-2">
-              Enter your Password
+              Password
             </label>
             <input
               type="password"
@@ -72,37 +92,14 @@ const login = () => {
             type="submit"
             className="w-full py-3 mt-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:shadow-outline"
           >
-            Log In
+            Sign Up
           </button>
         </form>
-        <div className="flex justify-between items-center my-4 mx-7 text-center text-gray-400 gap-3">
-          <div className="h-[1px] bg-white w-full"></div>
-          <span className="text-[12px]">or</span>
-          <div className="h-[1px] bg-white w-full"></div>
-        </div>
-        <div className="flex flex-col space-y-4">
-          <button
-            className="flex items-center justify-center bg-transparent text-gray-50 py-2 px-4 rounded-lg border-[2px] border-white focus:outline-none focus:shadow-outline"
-            onClick={() => signIn("google")}
-          >
-            <FaGoogle className="mr-2" />
-            Sign in with Google
-          </button>
-          <button
-            className="flex items-center justify-center bg-transparent text-gray-50 py-2 px-4 rounded-lg border-[2px] border-white focus:outline-none focus:shadow-outline"
-            onClick={() => signIn("github")}
-          >
-            <FaGithub className="mr-2" />
-            Sign in with GitHub
-          </button>
-        </div>
         <p className="text-center text-gray-300 mt-6">
-          Don't have an account? <Link href="/CreateAccount" className="text-white hover:text-gray-200 underline">Signup</Link>
+          Have an account? <Link href="/login" className="text-white hover:text-gray-200 underline">LogIn</Link>
         </p>
       </div>
     </div>
-  );
-};
-
-export default login;
+ )
+}
 
