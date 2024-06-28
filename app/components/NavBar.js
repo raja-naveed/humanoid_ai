@@ -17,7 +17,7 @@ const NavBar = () => {
   }, [status, session]);
 
   const handleLogin = () => {
-    router.push("/Login");
+    router.push("/login");
   };
 
   const handleLogout = () => {
