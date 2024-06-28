@@ -1,5 +1,7 @@
+
+
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -8,6 +10,13 @@ const NavBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { data: session, status } = useSession();
   const router = useRouter();
+  const [emailModified, setEmailModified] = useState("");
+
+  useEffect(() => {
+    if (status === 'authenticated' && session.user.email) {
+      setEmailModified(session.user.email.charAt(0) + "...." + session.user.email.slice(session.user.email.indexOf('@')));
+    }
+  }, [status, session]);
 
   const handleLogin = () => {
     router.push("/login");
@@ -35,7 +44,7 @@ const NavBar = () => {
         <div className='flex items-center gap-3 lg:gap-5 text-white'>
           <div className='flex flex-col text-xs lg:text-base'>
             <h3 className='italic'>{session.user.name}</h3>
-            <p className='text-gray-500'>{session.user.email}</p>
+            <p className='text-gray-500'>{emailModified}</p>
           </div>
           {session.user.image ? (
             <img src={session.user.image} alt="Profile" className='h-6 w-6 lg:h-8 lg:w-8 rounded-full' />
@@ -52,7 +61,7 @@ const NavBar = () => {
               <div className="absolute right-0 mt-2 w-20 bg-white rounded-full shadow-lg z-10">
                 <button
                   onClick={handleLogout}
-                  className="block w-full text-left px-3 py-1  text-white bg-custom-gradient rounded-full"
+                  className="block w-full text-left px-3 py-1 text-white bg-custom-gradient rounded-full"
                 >
                   Logout
                 </button>
@@ -66,3 +75,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
