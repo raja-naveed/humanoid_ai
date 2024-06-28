@@ -63,9 +63,9 @@ const login = () => {
               className="shadow appearance-none bg-transparent border rounded-lg w-full py-4 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               required
             />
-            <a href="#" className="flex justify-end text-[12px] text-gray-50 hover:text-gray-400 underline">
+            <Link href="#" className="flex justify-end text-[12px] text-gray-50 hover:text-gray-400 underline">
               Forgot Password?
-            </a>
+            </Link>
           </div>
           {error && <p className="text-red-500 text-sm italic mb-4">{error}</p>}
           <button
