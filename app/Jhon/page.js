@@ -2,7 +2,7 @@
 "use client"
 import React from 'react'
 import AgentsBox from '../components/AgentsBox'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/NavBar'
 import AgentsBoxSmall from '../components/AgentsBoxSmall'
 import Link from 'next/link'
 import { useState,useEffect } from 'react'

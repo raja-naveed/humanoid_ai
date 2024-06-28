@@ -13,8 +13,6 @@ const IntegrationSetting = () => {
       <div className="min-h-screen bg-cover bg-center bg-repeat-y md:bg-no-repeat flex flex-col gap-14" style={{ backgroundImage: `url(backgrounds/agentsBg.svg)` }}>
         <NavBar />
       <div>
-
-
         <div className="flex flex-col lg:flex-row mt-10">
           <div className="first mx-2 md:mx-[65px] flex flex-col lg:gap-20 w-full lg:w-1/3 mb-3 lg:mb-0">
             <AgentsBoxSmall imgUrl={"Jhon.png"} name={"Jhon."} jobType={"Data Analyst"} />
