@@ -21,7 +21,7 @@ export default function CreateAccount () {
                 email,
                 password
             })
-            router.push('/login')
+            router.push('/Login')
         
 
         }catch(error){
@@ -97,7 +97,7 @@ export default function CreateAccount () {
           </button>
         </form>
         <p className="text-center text-gray-300 mt-6">
-          Have an account? <Link href="/login" className="text-white hover:text-gray-200 underline">LogIn</Link>
+          Have an account? <Link href="/Login" className="text-white hover:text-gray-200 underline">LogIn</Link>
         </p>
       </div>
     </div>

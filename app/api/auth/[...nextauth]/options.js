@@ -46,7 +46,7 @@ export const options = {
         strategy : "jwt",
     },
     pages:{
-        signIn : "/login"
+        signIn : "/Login"
     }
  }
 

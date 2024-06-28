@@ -5,7 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -104,5 +104,5 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
 
